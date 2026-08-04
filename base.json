@@ -13,6 +13,7 @@
   ],
   "configMigration": true,
   "pinDigests": true,
+  "ignorePaths": [ "**/node_modules/**", "**/bower_components/**", "**/examples/**" ],
   "rangeStrategy": "update-lockfile",
   "minimumReleaseAge": "3 days",
   "lockFileMaintenance": {
