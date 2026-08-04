@@ -14,6 +14,16 @@
     {
       "matchManagers": [ "github-actions" ],
       "automerge": true
+    },
+    {
+      "matchManagers": [ "kubernetes" ],
+      "matchUpdateTypes": [ "pin", "pinDigest", "digest", "minor", "patch" ],
+      "automerge": true
+    },
+    {
+      "matchDatasources": [ "helm" ],
+      "matchUpdateTypes": [ "minor", "patch" ],
+      "automerge": true
     }
   ]
 }

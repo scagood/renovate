@@ -12,6 +12,7 @@
     "workarounds:all"
   ],
   "configMigration": true,
+  "pinDigests": true,
   "rangeStrategy": "update-lockfile",
   "minimumReleaseAge": "3 days",
   "lockFileMaintenance": {
