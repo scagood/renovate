@@ -4,7 +4,7 @@
     {
       "customType": "regex",
       "description": "Update helm.cattle.io/v1 HelmChart versions",
-      "managerFilePatterns": [ "deployment/**/*.{yaml,yml}" ],
+      "managerFilePatterns": [ "**/*.{yaml,yml}" ],
       "matchStrings": [
         "repo:\\s+\"?(?<registryUrl>https?://[^\"\\s]+)\"?[\\s\\S]*?chart:\\s+\"?(?<depName>[^\"\\s]+)\"?[\\s\\S]*?version:\\s+(?<currentValue>[^\\s]+)",
         "repo:\\s+\"?(?<registryUrl>https?://[^\"\\s]+)\"?[\\s\\S]*?version:\\s+(?<currentValue>[^\\s]+)[\\s\\S]*?chart:\\s+\"?(?<depName>[^\"\\s]+)\"?",
