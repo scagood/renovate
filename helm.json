@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update helm.cattle.io/v1 HelmChart versions",
+      "managerFilePatterns": [ "deployment/**/*.{yaml,yml}" ],
+      "matchStrings": [
+        "repo:\\s+\"?(?<registryUrl>https?://[^\"\\s]+)\"?[\\s\\S]*?chart:\\s+\"?(?<depName>[^\"\\s]+)\"?[\\s\\S]*?version:\\s+(?<currentValue>[^\\s]+)",
+        "repo:\\s+\"?(?<registryUrl>https?://[^\"\\s]+)\"?[\\s\\S]*?version:\\s+(?<currentValue>[^\\s]+)[\\s\\S]*?chart:\\s+\"?(?<depName>[^\"\\s]+)\"?",
+        "chart:\\s+\"?(?<depName>[^\"\\s]+)\"?[\\s\\S]*?repo:\\s+\"?(?<registryUrl>https?://[^\"\\s]+)\"?[\\s\\S]*?version:\\s+(?<currentValue>[^\\s]+)",
+        "chart:\\s+\"?(?<depName>[^\"\\s]+)\"?[\\s\\S]*?version:\\s+(?<currentValue>[^\\s]+)[\\s\\S]*?repo:\\s+\"?(?<registryUrl>https?://[^\"\\s]+)\"?",
+        "version:\\s+(?<currentValue>[^\\s]+)[\\s\\S]*?chart:\\s+\"?(?<depName>[^\"\\s]+)\"?[\\s\\S]*?repo:\\s+\"?(?<registryUrl>https?://[^\"\\s]+)\"?",
+        "version:\\s+(?<currentValue>[^\\s]+)[\\s\\S]*?repo:\\s+\"?(?<registryUrl>https?://[^\"\\s]+)\"?[\\s\\S]*?chart:\\s+\"?(?<depName>[^\"\\s]+)\"?"
+      ],
+      "datasourceTemplate": "helm"
+    }
+  ]
+}
