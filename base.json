@@ -22,7 +22,7 @@
   "prBodyTemplate": "{{{table}}}{{{warnings}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
   "prBodyColumns": [ "Package", "Update", "Type", "Change" ],
   "postUpdateOptions": [
-    "yarnDedupeFewer",
+    "yarnDedupeFewer"
   ],
   "packageRules": [
     {
