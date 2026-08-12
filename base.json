@@ -32,6 +32,11 @@
       "semanticCommitType": "deps"
     },
     {
+      "description": "Skip the release-age hold for my own packages/images",
+      "matchPackageNames": [ "ghcr.io/scagood/**", "@scagood/**", "@darksheep/**" ],
+      "minimumReleaseAge": "0"
+    },
+    {
       "matchDepTypes": [ "dependencies" ],
       "semanticCommitScope": "pkg"
     },
