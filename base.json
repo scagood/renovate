@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     ":disableRateLimiting",
     ":enableVulnerabilityAlerts",
@@ -22,6 +23,9 @@
   "pinDigests": true,
   "prBodyTemplate": "{{{table}}}{{{warnings}}}{{{notes}}}{{{changelogs}}}{{{controls}}}{{{footer}}}",
   "prBodyColumns": [ "Package", "Update", "Type", "Change" ],
+  "prBodyNotes": [
+    ":no_bell: To stop Renovate pushing further updates to this PR, add the `stop-updating` label."
+  ],
   "postUpdateOptions": [
     "yarnDedupeFewer"
   ],

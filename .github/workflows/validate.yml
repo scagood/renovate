@@ -1,0 +1,26 @@
+name: Validate
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  presets:
+    name: Validate renovate presets
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      # `--no-global` matters: without it the CLI treats files passed as
+      # arguments as self-hosted global config, which silently accepts options
+      # that are invalid inside a preset.
+      # `git ls-files` keeps this to tracked JSON.
+      - name: renovate-config-validator
+        run: npx --yes --package renovate@latest -- renovate-config-validator --strict --no-global $(git ls-files -- '*.json')
