@@ -41,6 +41,12 @@
       "minimumReleaseAge": "0"
     },
     {
+      "description": "Renovate never sets a releaseTimestamp on digest updates, so under the default minimumReleaseAgeBehaviour=timestamp-required their stability-days check stays pending forever",
+      "matchManagers": [ "github-actions" ],
+      "matchUpdateTypes": [ "digest", "pinDigest" ],
+      "minimumReleaseAge": null
+    },
+    {
       "matchDepTypes": [ "dependencies" ],
       "semanticCommitScope": "pkg"
     },
