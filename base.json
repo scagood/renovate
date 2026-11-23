@@ -41,10 +41,12 @@
       "minimumReleaseAge": "0"
     },
     {
-      "description": "Renovate never sets a releaseTimestamp on digest updates, so under the default minimumReleaseAgeBehaviour=timestamp-required their stability-days check stays pending forever",
-      "matchManagers": [ "github-actions" ],
+      "description": [
+        "Renovate ages a digest update twice: at lookup by its tag's timestamp, which ECR Public, ghcr.io, lscr.io and GitHub Actions don't supply, and in the branch status check by a releaseTimestamp it never sets on digests. Under the default timestamp-required, a missing timestamp holds the update forever.",
+        "Matched on update type alone so every file that pins the same image decides alike; exempting one manager split groups such as compose.yaml + workflow services (scagood/abb#507)."
+      ],
       "matchUpdateTypes": [ "digest", "pinDigest" ],
-      "minimumReleaseAge": null
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
     },
     {
       "matchDepTypes": [ "dependencies" ],
